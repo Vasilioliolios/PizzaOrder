@@ -1,0 +1,70 @@
+<html>
+<title>Transaction log
+</title>
+<head>
+  <style>
+  label {
+      display: block;
+      font: 1rem 'Fira Sans', sans-serif;
+  }
+
+  input,
+  label {
+      margin: .4rem 0;
+  }
+
+  .note {
+      font-size: .8em;
+  }
+
+
+
+  </style>
+</head>
+<body>
+<label for="start">Date of transaction:</label>
+
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="1978-01-01" max="2050-12-31"><br>
+
+       <div class="outer-wrapper">
+       	<header class="clearfix">
+       		<h1>Transactions</h1>
+       		<select id="Transaction-list">
+       			<option value="usa">Choose a Transaction number</option>
+       			<option value="T1">#1</option>
+       			<option value="T2">#2</option>
+       			<option value="T3">#3</option>
+       			<option value="T4">#4</option>
+       			<option value="T5">#5</option>
+
+       		</select>
+       	</header>
+        <div class="main clearfix">
+      		<div class="img-holder">
+      			<div>
+      				<p id="info-name"></p>
+      			</div>
+      		</div>
+      		<div class="info-holder">
+      			<p><strong>Amount: </strong><span id="amount">N/A</span></p>
+
+
+      		</div>
+      	</div>
+      </div>
+<h1></h1>
+<h2></h2>
+<p></p>
+<script src="js/transaction.js"></script>
+<script>
+    document.getElementById('Transaction-list').onchange = function() {
+        var selected = this.value;
+        document.getElementById('amount').textContent = transactionhistory[this.value].amount;
+
+
+    };
+</script>
+</body>
+</html>
